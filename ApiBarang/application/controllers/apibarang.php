@@ -50,8 +50,8 @@ function __construct($config = 'rest')
             'harga_barang' => $this->put('harga_barang'),
             'stok_barang' => $this->post('stok_barang')
     );
-    $this->db->where('id', $id);
-    $update = $this->db->update('telepon', $data);
+    $this->db->where('id_barang', $id);
+    $update = $this->db->update('tabel_barang', $data);
     if ($update) {
         $this->response($data, 200);
 } else {
@@ -61,9 +61,9 @@ function __construct($config = 'rest')
 //Menghapus salah satu data kontak
 function index_delete()
 {
-    $id = $this->delete('id');
-    $this->db->where('id', $id);
-    $delete = $this->db->delete('telepon');
+    $id = $this->delete('id_barang');
+    $this->db->where('id_barang', $id);
+    $delete = $this->db->delete('tabel_barang');
     if ($delete) {
         $this->response(array('status' => 'success'), 201);
 } else {
