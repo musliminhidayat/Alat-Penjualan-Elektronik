@@ -15,12 +15,12 @@ function __construct($config = 'rest')
     //Menampilkan data kontak
     function index_get()
     {
-         $id = $this->get('id_barang');
+         $id = $this->get('id_transaksi');
          if ($id == '') {
-             $barang = $this->db->get('tabel_barang')->result();
+             $transaksi = $this->db->get('tabel_transaksi')->result();
     } else {
-        $this->db->where('id_barang', $id);
-        $barang = $this->db->get('tabel_barang')->result();
+        $this->db->where('id_transaksi', $id);
+        $transaksi = $this->db->get('tabel_transaksi')->result();
     }
         $this->response($barang, 200);
     }
@@ -28,12 +28,16 @@ function __construct($config = 'rest')
     function index_post()
     {
         $data = array(
+            'id_transaksi' => $this->post('id_transaksi'),
             'id_barang' => $this->post('id_barang'),
-            'nama_barang' => $this->post('nama_barang'),
-            'harga_barang' => $this->post('harga_barang'),
-            'stok_barang' => $this->post('stok_barang')
+            'nama_pembeli' => $this->post('nama_pembeli'),
+            'nomor_pembeli' => $this->post('nomor_pembeli'),
+            'alamat_pembeli' => $this->post('alamat_pembeli').
+            'jumlah_pesanan' => $this->post('jumlah_pesanan').
+            'total_harga' => $this->post('total_harga'),
+            'tanggal_pesanan' => $this->post('tanggal_pesanan')
     );
-    $insert = $this->db->insert('tabel_barang', $data);
+    $insert = $this->db->insert('tabel_transaksi', $data);
     if ($insert) {
         $this->response($data, 200);
     } else {
