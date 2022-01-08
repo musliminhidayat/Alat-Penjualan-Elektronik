@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 //require APPPATH . '/libraries/REST_Controller.php';
 require('application/libraries/REST_Controller.php');
 //use Restserver\Libraries\REST_Controller;
-class Kontak extends REST_Controller
+class Apibarang extends REST_Controller
 {
 function __construct($config = 'rest')
 
@@ -12,16 +12,16 @@ function __construct($config = 'rest')
     parent::__construct($config);
     $this->load->database();
     }
-    //Menampilkan data kontak
+    
     function index_get()
     {
          $id = $this->get('id_barang');
          if ($id == '') {
              $barang = $this->db->get('tabel_barang')->result();
-    } else {
-        $this->db->where('id_barang', $id);
-        $barang = $this->db->get('tabel_barang')->result();
-    }
+        } else {
+            $this->db->where('id_barang', $id);
+            $barang = $this->db->get('tabel_barang')->result();
+         }
         $this->response($barang, 200);
     }
     //Mengirim atau menambah data kontak baru
