@@ -49,13 +49,17 @@ function __construct($config = 'rest')
     {
         $id = $this->put('id_barang');
         $data = array(
+            'id_transaksi' => $this->put('id_transaksi'),
             'id_barang' => $this->put('id_barang'),
-            'nama_barang' => $this->put('nama_barang'),
-            'harga_barang' => $this->put('harga_barang'),
-            'stok_barang' => $this->post('stok_barang')
+            'nama_pembeli' => $this->put('nama_pembeli'),
+            'nomor_pembeli' => $this->put('nomor_pembeli'),
+            'alamat_pembeli' => $this->put('alamat_pembeli').
+            'jumlah_pesanan' => $this->put('jumlah_pesanan').
+            'total_harga' => $this->put('total_harga'),
+            'tanggal_pesanan' => $this->put('tanggal_pesanan')
     );
-    $this->db->where('id_barang', $id);
-    $update = $this->db->update('tabel_barang', $data);
+    $this->db->where('id_transaksi', $id);
+    $update = $this->db->update('tabel_transaksi', $data);
     if ($update) {
         $this->response($data, 200);
 } else {
@@ -65,9 +69,9 @@ function __construct($config = 'rest')
 //Menghapus salah satu data kontak
 function index_delete()
 {
-    $id = $this->delete('id_barang');
+    $id = $this->delete('id_transaksi');
     $this->db->where('id_barang', $id);
-    $delete = $this->db->delete('tabel_barang');
+    $delete = $this->db->delete('tabel_transaksi');
     if ($delete) {
         $this->response(array('status' => 'success'), 201);
 } else {
