@@ -2,9 +2,9 @@
 <?php echo $this->session->flashdata('hasil'); ?>
 </font>
 <table border="1">
-    <tr><th>ID</th><th>NAMA</th><th>NOMOR</th><th></th></tr>
+    <tr><th>ID</th><th>NAMA</th><th>HARGA</th><th>STOK</th></tr>
     <?php
-    foreach ($datakontak as $kontak){
+    foreach ($databarang as $barang){
         echo "<tr>
               <td>$kontak->id</td>
               <td>$kontak->nama</td>

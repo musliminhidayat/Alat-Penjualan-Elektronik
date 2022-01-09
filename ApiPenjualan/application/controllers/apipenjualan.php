@@ -12,71 +12,71 @@ function __construct($config = 'rest')
     parent::__construct($config);
     $this->load->database();
     }
-    //Menampilkan data kontak
+    
     function index_get()
     {
-         $id = $this->get('id_transaksi');
+         $id = $this->get('id_penjualan');
          if ($id == '') {
-             $transaksi = $this->db->get('tabel_transaksi')->result();
+             $penjualan = $this->db->get('tabel_penjualan')->result();
     } else {
-        $this->db->where('id_transaksi', $id);
-        $transaksi = $this->db->get('tabel_transaksi')->result();
+        $this->db->where('id_penjualan', $id);
+        $penjualan = $this->db->get('tabel_penjualan')->result();
     }
-        $this->response($barang, 200);
+        $this->response($penjualan, 200);
     }
-    //Mengirim atau menambah data kontak baru
+    
     function index_post()
     {
         $data = array(
-            'id_transaksi' => $this->post('id_transaksi'),
+            'id_penjualan' => $this->post('id_penjualan'),
             'id_barang' => $this->post('id_barang'),
             'nama_pembeli' => $this->post('nama_pembeli'),
             'nomor_pembeli' => $this->post('nomor_pembeli'),
-            'alamat_pembeli' => $this->post('alamat_pembeli').
-            'jumlah_pesanan' => $this->post('jumlah_pesanan').
+            'alamat_pembeli' => $this->post('alamat_pembeli'),
+            'jumlah_pesanan' => $this->post('jumlah_pesanan'),
             'total_harga' => $this->post('total_harga'),
             'tanggal_pesanan' => $this->post('tanggal_pesanan')
     );
-    $insert = $this->db->insert('tabel_transaksi', $data);
+    $insert = $this->db->insert('tabel_penjualan', $data);
     if ($insert) {
         $this->response($data, 200);
     } else {
          $this->response(array('status' => 'fail', 502));
     }
     }
-    //Memperbarui data kontak yang telah ada
+    
     function index_put()
     {
         $id = $this->put('id_barang');
         $data = array(
-            'id_transaksi' => $this->put('id_transaksi'),
+            'id_penjualan' => $this->put('id_penjualan'),
             'id_barang' => $this->put('id_barang'),
             'nama_pembeli' => $this->put('nama_pembeli'),
             'nomor_pembeli' => $this->put('nomor_pembeli'),
-            'alamat_pembeli' => $this->put('alamat_pembeli').
-            'jumlah_pesanan' => $this->put('jumlah_pesanan').
+            'alamat_pembeli' => $this->put('alamat_pembeli'),
+            'jumlah_pesanan' => $this->put('jumlah_pesanan'),
             'total_harga' => $this->put('total_harga'),
             'tanggal_pesanan' => $this->put('tanggal_pesanan')
     );
-    $this->db->where('id_transaksi', $id);
-    $update = $this->db->update('tabel_transaksi', $data);
+    $this->db->where('id_penjualan', $id);
+    $update = $this->db->update('tabel_penjualan', $data);
     if ($update) {
         $this->response($data, 200);
 } else {
     $this->response(array('status' => 'fail', 502));
 }
 }
-//Menghapus salah satu data kontak
+
 function index_delete()
 {
-    $id = $this->delete('id_transaksi');
+    $id = $this->delete('id_penjualan');
     $this->db->where('id_barang', $id);
-    $delete = $this->db->delete('tabel_transaksi');
+    $delete = $this->db->delete('tabel_penjualan');
     if ($delete) {
         $this->response(array('status' => 'success'), 201);
 } else {
     $this->response(array('status' => 'fail', 502));
 }
 }
-//Masukan function selanjutnya disini
+i
 }
