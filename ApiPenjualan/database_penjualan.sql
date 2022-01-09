@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Des 2021 pada 05.42
+-- Waktu pembuatan: 09 Jan 2022 pada 13.48
 -- Versi server: 10.4.21-MariaDB
 -- Versi PHP: 8.0.11
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `tabel_penjualan` (
-  `id_transaksi` int(11) NOT NULL,
+  `id_penjualan` int(11) NOT NULL,
   `id_barang` varchar(25) NOT NULL,
   `nama_pembeli` varchar(25) NOT NULL,
   `nomor_pembeli` varchar(25) NOT NULL,
@@ -39,6 +39,14 @@ CREATE TABLE `tabel_penjualan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Dumping data untuk tabel `tabel_penjualan`
+--
+
+INSERT INTO `tabel_penjualan` (`id_penjualan`, `id_barang`, `nama_pembeli`, `nomor_pembeli`, `alamat_pembeli`, `jumlah_pesanan`, `total_harga`, `tanggal_pesanan`) VALUES
+(49, '75', 'hjv', '8999', 'gvhg', 908989, 87687667, '2022-01-09'),
+(76, 'fdx', 'tdsgfq', '757', 'gfdf', 65461, 654, '2022-01-09');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -46,7 +54,7 @@ CREATE TABLE `tabel_penjualan` (
 -- Indeks untuk tabel `tabel_penjualan`
 --
 ALTER TABLE `tabel_penjualan`
-  ADD PRIMARY KEY (`id_transaksi`);
+  ADD PRIMARY KEY (`id_penjualan`);
 
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
@@ -56,7 +64,7 @@ ALTER TABLE `tabel_penjualan`
 -- AUTO_INCREMENT untuk tabel `tabel_penjualan`
 --
 ALTER TABLE `tabel_penjualan`
-  MODIFY `id_transaksi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=487;
+  MODIFY `id_penjualan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=487;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
