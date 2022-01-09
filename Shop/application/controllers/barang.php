@@ -1,5 +1,5 @@
 <?php
-Class Kontak extends CI_Controller{
+Class Barang extends CI_Controller{
     
     var $API ="";
     
@@ -27,7 +27,7 @@ Class Kontak extends CI_Controller{
                 'harga_barang'=>  $this->input->post('harga_barang'),
                 'stok_barang'=>  $this->input->post('stok_barang'));
 
-            $insert =  $this->curl->simple_post($this->API.'/barang', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+            $insert =  $this->curl->simple_post($this->API.'/apibarang', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($insert)
             {
                 $this->session->set_flashdata('hasil','Insert Data Berhasil');
@@ -49,7 +49,7 @@ Class Kontak extends CI_Controller{
                 'nama_barang'      =>  $this->input->post('nama_barang'),
                 'harga_barang'=>  $this->input->post('harga_barang'),
                 'stok_barang'=>  $this->input->post('stok_barang'));
-            $update =  $this->curl->simple_put($this->API.'/barang', $data, array(CURLOPT_BUFFERSIZE => 10)); 
+            $update =  $this->curl->simple_put($this->API.'/apibarang', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($update)
             {
                 $this->session->set_flashdata('hasil','Update Data Berhasil');
@@ -60,7 +60,7 @@ Class Kontak extends CI_Controller{
             redirect('barang');
         }else{
             $params = array('id'=>  $this->uri->segment(3));
-            $data['databarang'] = json_decode($this->curl->simple_get($this->API.'/barang',$params));
+            $data['databarang'] = json_decode($this->curl->simple_get($this->API.'/apibarang',$params));
             $this->load->view('barang/edit',$data);
         }
     }
@@ -70,7 +70,7 @@ Class Kontak extends CI_Controller{
         if(empty($id)){
             redirect('barang');
         }else{
-            $delete =  $this->curl->simple_delete($this->API.'/barang', array('id'=>$id), array(CURLOPT_BUFFERSIZE => 10)); 
+            $delete =  $this->curl->simple_delete($this->API.'/apibarang', array('id_barang'=>$id), array(CURLOPT_BUFFERSIZE => 10)); 
             if($delete)
             {
                 $this->session->set_flashdata('hasil','Delete Data Berhasil');

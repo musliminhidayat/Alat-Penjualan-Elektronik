@@ -6,13 +6,14 @@
     <?php
     foreach ($databarang as $barang){
         echo "<tr>
-              <td>$kontak->id</td>
-              <td>$kontak->nama</td>
-              <td>$kontak->nomor</td>
-              <td>".anchor('kontak/edit/'.$kontak->id,'Edit')."
-                  ".anchor('kontak/delete/'.$kontak->id,'Delete')."</td>
+              <td>$barang->id_barang</td>
+              <td>$barang->nama_barang</td>
+              <td>$barang->harga_barang</td>
+              <td>$barang->stok_barang</td>
+              <td>".anchor('barang/edit/'.$barang->id_barang,'Edit')."
+                  ".anchor('barang/delete/'.$barang->id_barang,'Delete')."</td>
               </tr>";
     }
     ?>
 </table>
-<a href="http://localhost/rest_client/index.php/kontak/create">+ Tambah data<a>
+<a href="http://localhost/Alat-Penjualan-elektronik/shop/index.php/barang/create">+ Tambah data<a>
