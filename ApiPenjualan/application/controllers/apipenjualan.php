@@ -78,5 +78,5 @@ function index_delete()
     $this->response(array('status' => 'fail', 502));
 }
 }
-i
+
 }
