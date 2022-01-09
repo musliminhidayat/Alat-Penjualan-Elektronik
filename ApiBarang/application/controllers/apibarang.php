@@ -48,7 +48,7 @@ function __construct($config = 'rest')
             'id_barang' => $this->put('id_barang'),
             'nama_barang' => $this->put('nama_barang'),
             'harga_barang' => $this->put('harga_barang'),
-            'stok_barang' => $this->post('stok_barang')
+            'stok_barang' => $this->put('stok_barang')
     );
     $this->db->where('id_barang', $id);
     $update = $this->db->update('tabel_barang', $data);

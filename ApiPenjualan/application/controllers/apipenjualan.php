@@ -34,9 +34,8 @@ function __construct($config = 'rest')
             'nomor_pembeli' => $this->post('nomor_pembeli'),
             'alamat_pembeli' => $this->post('alamat_pembeli'),
             'jumlah_pesanan' => $this->post('jumlah_pesanan'),
-            'total_harga' => $this->post('total_harga'),
-            'tanggal_pesanan' => $this->post('tanggal_pesanan')
-    );
+            'total_harga' => $this->post('total_harga')
+        );
     $insert = $this->db->insert('tabel_penjualan', $data);
     if ($insert) {
         $this->response($data, 200);
@@ -47,7 +46,7 @@ function __construct($config = 'rest')
     
     function index_put()
     {
-        $id = $this->put('id_barang');
+        $id = $this->put('id_penjualan');
         $data = array(
             'id_penjualan' => $this->put('id_penjualan'),
             'id_barang' => $this->put('id_barang'),
@@ -55,8 +54,7 @@ function __construct($config = 'rest')
             'nomor_pembeli' => $this->put('nomor_pembeli'),
             'alamat_pembeli' => $this->put('alamat_pembeli'),
             'jumlah_pesanan' => $this->put('jumlah_pesanan'),
-            'total_harga' => $this->put('total_harga'),
-            'tanggal_pesanan' => $this->put('tanggal_pesanan')
+            'total_harga' => $this->put('total_harga')
     );
     $this->db->where('id_penjualan', $id);
     $update = $this->db->update('tabel_penjualan', $data);
@@ -70,7 +68,7 @@ function __construct($config = 'rest')
 function index_delete()
 {
     $id = $this->delete('id_penjualan');
-    $this->db->where('id_barang', $id);
+    $this->db->where('id_penjualan', $id);
     $delete = $this->db->delete('tabel_penjualan');
     if ($delete) {
         $this->response(array('status' => 'success'), 201);
