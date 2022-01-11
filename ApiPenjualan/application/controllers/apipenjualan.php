@@ -34,7 +34,8 @@ function __construct($config = 'rest')
             'nomor_pembeli' => $this->post('nomor_pembeli'),
             'alamat_pembeli' => $this->post('alamat_pembeli'),
             'jumlah_pesanan' => $this->post('jumlah_pesanan'),
-            'total_harga' => $this->post('total_harga')
+            'total_harga' => $this->post('total_harga'),
+            'id_pegawai' => $this->post('id_pegawai')
         );
     $insert = $this->db->insert('tabel_penjualan', $data);
     if ($insert) {
@@ -54,7 +55,8 @@ function __construct($config = 'rest')
             'nomor_pembeli' => $this->put('nomor_pembeli'),
             'alamat_pembeli' => $this->put('alamat_pembeli'),
             'jumlah_pesanan' => $this->put('jumlah_pesanan'),
-            'total_harga' => $this->put('total_harga')
+            'total_harga' => $this->put('total_harga'),
+            'id_pegawai' => $this->post('id_pegawai')
     );
     $this->db->where('id_penjualan', $id);
     $update = $this->db->update('tabel_penjualan', $data);

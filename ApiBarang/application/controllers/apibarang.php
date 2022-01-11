@@ -24,7 +24,7 @@ function __construct($config = 'rest')
          }
         $this->response($barang, 200);
     }
-    //Mengirim atau menambah data kontak baru
+    
     function index_post()
     {
         $data = array(
@@ -40,7 +40,7 @@ function __construct($config = 'rest')
          $this->response(array('status' => 'fail', 502));
     }
     }
-    //Memperbarui data kontak yang telah ada
+    
     function index_put()
     {
         $id = $this->put('id_barang');
@@ -58,7 +58,7 @@ function __construct($config = 'rest')
     $this->response(array('status' => 'fail', 502));
 }
 }
-//Menghapus salah satu data kontak
+
 function index_delete()
 {
     $id = $this->delete('id_barang');
@@ -70,5 +70,5 @@ function index_delete()
     $this->response(array('status' => 'fail', 502));
 }
 }
-//Masukan function selanjutnya disini
+
 }
