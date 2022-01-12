@@ -5,7 +5,7 @@ Class penjualan extends CI_Controller{
     
     function __construct() {
         parent::__construct();
-        $this->API="http://localhost/Alat-Penjualan-Elektronik/Apipenjualan/index.php";
+        $this->API="http://192.168.10.2/Alat-Penjualan-Elektronik/Apipenjualan/index.php";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');

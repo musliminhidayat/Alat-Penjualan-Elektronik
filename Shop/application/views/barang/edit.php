@@ -1,3 +1,7 @@
+<a href="<?php echo base_url() ?>index.php/pegawai">Pegawai</a>
+    <a href="<?php echo base_url() ?>index.php/penjualan">Penjualan</a>
+    <a href="<?php echo base_url() ?>index.php/barang">Barang</a>
+    <a href="<?php echo base_url() ?>index.php/customer">Customer</a>
 <?php echo form_open('barang/edit');?>
 <?php echo form_hidden('id_barang',$databarang[0]->id_barang);?>
 

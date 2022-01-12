@@ -1,3 +1,7 @@
+<a href="<?php echo base_url() ?>index.php/pegawai">Pegawai</a>
+    <a href="<?php echo base_url() ?>index.php/penjualan">Penjualan</a>
+    <a href="<?php echo base_url() ?>index.php/barang">Barang</a>
+    <a href="<?php echo base_url() ?>index.php/customer">Customer</a>
 <?php echo form_open_multipart('penjualan/create');?>
 <table>
     <tr><td>Id</td><td><?php echo form_input('id_penjualan');?></td></tr>
