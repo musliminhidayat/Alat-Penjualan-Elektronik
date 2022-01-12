@@ -5,7 +5,7 @@ Class Customer extends CI_Controller{
     
     function __construct() {
         parent::__construct();
-        $this->API="http://localhost/Alat-Penjualan-Elektronik/Apicustomer/index.php";
+        $this->API="http://localhost/Alat-Penjualan-Elektronik/Apibarang/index.php";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
