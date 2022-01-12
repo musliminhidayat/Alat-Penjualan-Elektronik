@@ -56,7 +56,7 @@ function __construct($config = 'rest')
             'alamat_pembeli' => $this->put('alamat_pembeli'),
             'jumlah_pesanan' => $this->put('jumlah_pesanan'),
             'total_harga' => $this->put('total_harga'),
-            'id_pegawai' => $this->post('id_pegawai')
+            'id_pegawai' => $this->put('id_pegawai')
     );
     $this->db->where('id_penjualan', $id);
     $update = $this->db->update('tabel_penjualan', $data);
