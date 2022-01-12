@@ -5,7 +5,7 @@ Class Pegawai extends CI_Controller{
     
     function __construct() {
         parent::__construct();
-        $this->API="http://localhost/Alat-Penjualan-Elektronik/Apipegawai/index.php";
+        $this->API="http://localhost/Alat-Penjualan-Elektronik/Apipenjualan/index.php";
         $this->load->library('session');
         $this->load->library('curl');
         $this->load->helper('form');
@@ -57,7 +57,7 @@ Class Pegawai extends CI_Controller{
             }
             redirect('pegawai');
         }else{
-            $params = array('id'=>  $this->uri->segment(3));
+            $params = array('id_pegawai'=>  $this->uri->segment(3));
             $data['datapegawai'] = json_decode($this->curl->simple_get($this->API.'/apipegawai',$params));
             $this->load->view('pegawai/edit',$data);
         }

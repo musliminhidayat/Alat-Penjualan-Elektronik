@@ -59,7 +59,7 @@ Class Barang extends CI_Controller{
             }
             redirect('barang');
         }else{
-            $params = array('id'=>  $this->uri->segment(3));
+            $params = array('id_barang'=>  $this->uri->segment(3));
             $data['databarang'] = json_decode($this->curl->simple_get($this->API.'/apibarang',$params));
             $this->load->view('barang/edit',$data);
         }

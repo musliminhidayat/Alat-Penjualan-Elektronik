@@ -1,7 +1,5 @@
 <?php echo form_open('customer/edit');?>
 <?php echo form_hidden('id_customer',$datacustomer[0]->id_customer);
-
-var_dump($datacustomer);
 ?>
 
 <table>

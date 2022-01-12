@@ -67,7 +67,7 @@ Class penjualan extends CI_Controller{
             }
             redirect('penjualan');
         }else{
-            $params = array('id'=>  $this->uri->segment(3));
+            $params = array('id_penjualan'=>  $this->uri->segment(3));
             $data['datapenjualan'] = json_decode($this->curl->simple_get($this->API.'/apipenjualan',$params));
             $this->load->view('penjualan/edit',$data);
         }

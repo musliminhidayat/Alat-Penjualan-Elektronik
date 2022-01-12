@@ -59,7 +59,7 @@ Class Customer extends CI_Controller{
             }
             redirect('customer');
         }else{
-            $params = array('id'=>  $this->uri->segment(3));
+            $params = array('id_customer'=>  $this->uri->segment(3));
             $data['datacustomer'] = json_decode($this->curl->simple_get($this->API.'/apicustomer',$params));
             $this->load->view('customer/edit',$data);
         }
