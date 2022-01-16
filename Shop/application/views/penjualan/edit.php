@@ -13,6 +13,7 @@
     <tr><td>ALAMAT</td><td><?php echo form_input('alamat_pembeli',$datapenjualan[0]->alamat_pembeli);?></td></tr>
     <tr><td>JUMLAH</td><td><?php echo form_input('jumlah_pesanan',$datapenjualan[0]->jumlah_pesanan);?></td></tr>
     <tr><td>TOTAL</td><td><?php echo form_input('total_harga',$datapenjualan[0]->total_harga);?></td></tr>
+    <tr><td>ID Pegawai</td><td><?php echo form_input('id_pegawai',$datapenjualan[0]->id_pegawai);?></td></tr>
     <tr><td colspan="2">
         <?php echo form_submit('submit','Simpan');?>
         <?php echo anchor('penjualan','Kembali');?></td></tr>

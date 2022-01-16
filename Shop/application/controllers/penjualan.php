@@ -28,7 +28,9 @@ Class penjualan extends CI_Controller{
                 'nomor_pembeli' => $this->input->post('nomor_pembeli'),
                 'alamat_pembeli' => $this->input->post('alamat_pembeli'),
                 'jumlah_pesanan' => $this->input->post('jumlah_pesanan'),
-                'total_harga' => $this->input->post('total_harga')
+                'total_harga' => $this->input->post('total_harga'),
+                'id_pegawai' => $this->input->post('id_pegawai')
+
             );
 
             $insert =  $this->curl->simple_post($this->API.'/apipenjualan', $data, array(CURLOPT_BUFFERSIZE => 10)); 
@@ -55,7 +57,9 @@ Class penjualan extends CI_Controller{
                 'nomor_pembeli' => $this->input->post('nomor_pembeli'),
                 'alamat_pembeli' => $this->input->post('alamat_pembeli'),
                 'jumlah_pesanan' => $this->input->post('jumlah_pesanan'),
-                'total_harga' => $this->input->post('total_harga')
+                'total_harga' => $this->input->post('total_harga'),
+                'id_pegawai' => $this->input->post('id_pegawai')
+
             );
             $update =  $this->curl->simple_put($this->API.'/apipenjualan', $data, array(CURLOPT_BUFFERSIZE => 10)); 
             if($update)
